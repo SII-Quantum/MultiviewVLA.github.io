@@ -194,3 +194,20 @@ body {
   border-radius: 8px;
   border: 1px solid #dbdbdb;
 }
+
+.appendix-figure {
+  margin: 2rem 0;
+}
+
+.appendix-figure img {
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+}
+
+.appendix-figure .figure-caption {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #363636;
+  margin-top: 0.75rem;
+  text-align: center;
+}

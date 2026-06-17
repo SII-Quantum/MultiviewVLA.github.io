@@ -216,6 +216,15 @@ body {
   border: 1px solid #dbdbdb;
 }
 
+.real-robot-video-grid video {
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+}
+
+.real-robot-video-grid .column {
+  margin-bottom: 1.5rem;
+}
+
 .appendix-figure {
   margin: 2rem 0;
 }

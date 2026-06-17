@@ -276,6 +276,42 @@
     </div>
     <!--/ Customized occlusion-focused tasks. -->
 
+    <!-- Occlusion-Focused Real-Robot Tasks. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Occlusion-Focused Real-Robot Tasks</h2>
+        <p class="content has-text-justified">
+          For real-robot evaluation, we design right-arm-only occlusion tasks on a Mobile ALOHA dual-arm platform.
+          The unused left-wrist camera is repurposed as an additional side-view camera by placing it at a task-specific viewpoint using an extension cable.
+          We collect 100 demonstrations for each task. The real-robot multiview setup is shown below, and the videos show UniviewVLA rollouts.
+        </p>
+
+        <div class="columns is-centered real-robot-video-grid" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+          <div class="column is-half has-text-centered">
+            <h4 class="title is-5">Oreo-to-Plate</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/real-robot/orea1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half has-text-centered">
+            <h4 class="title is-5">Occluded-Doll Move</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/real-robot/doll2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <figure class="appendix-figure">
+          <img class="img-fluid" alt="Real-robot multiview setup" src="./static/images/real_robot_multiview.png">
+          <figcaption class="figure-caption has-text-centered">
+            <strong>Real-robot multiview.</strong>
+            The unused left-wrist camera is repurposed as a side-view camera via an extension cable, providing additional occlusion-revealing observations.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!--/ Occlusion-Focused Real-Robot Tasks. -->
+
     <!-- Standard occlusion-free benchmark tasks. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">

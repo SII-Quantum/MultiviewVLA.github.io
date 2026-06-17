@@ -23,15 +23,25 @@ body {
   padding-bottom: 3rem;
 }
 
+.teaser .figure-caption {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #363636;
+  max-width: 960px;
+  margin: 1rem auto 0;
+  text-align: justify;
+}
+
+.teaser .figure-caption strong {
+  color: #111;
+}
+
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
 
-
 .publication-title {
 }
-
-.publication-banner {
   max-height: parent;
 
 }

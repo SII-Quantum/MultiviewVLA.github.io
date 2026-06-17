@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation">
+        content="UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling">
   <meta name="keywords" content="Robot Policy Learning, Vision-Language-Action, Diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation</title>
+  <title>UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling</title>
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Diffusion Transformer Policy: Scaling Diffusion Transformer for Generalist Vision-Language-Action Learning">
-  <meta name="twitter:description" content="Diffusion Transformer Policy: Scaling Diffusion Transformer for Generalist Vision-Language-Action Learning">
+  <meta name="twitter:title" content="UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling">
+  <meta name="twitter:description" content="UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling">
 
   <link rel="stylesheet" href="styles.css">
   
@@ -74,30 +74,30 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions<br>for Robot Data Curation</h1>
+          <h1 class="title is-1 publication-title">UniviewVLA: A Unified Multiview Vision-Language-Action Model<br>with World Modeling</h1>
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">Tao Xu<sup>1,2</sup>,</span>
-            <span class="author-block">Jiaxin Wang<sup>2,3</sup>,</span>
             <span class="author-block">Runhao Zhang<sup>2</sup>,</span>
-            <span class="author-block">Jiayi Guan<sup>1</sup>,</span>
-            <span class="author-block">Xianchao Zeng<sup>2</sup>,</span>
-            <span class="author-block">Weixi Song<sup>2</sup>,</span>
-            <span class="author-block">Xinyu Zhou<sup>2</sup>,</span>
-            <span class="author-block">Zhetao Chen<sup>2</sup>,</span>
-            <span class="author-block">Guang Chen<sup>1,2</sup>,</span>
-            <span class="author-block">Yong-Lu Li<sup>2,4,&dagger;</sup></span>
+            <span class="author-block">Zhijian Huang<sup>4</sup>,</span>
+            <span class="author-block">Jiayi Guan<sup>4</sup>,</span>
+            <span class="author-block">Jiaxin Wang<sup>2</sup>,</span>
+            <span class="author-block">Yifan Ding<sup>2</sup>,</span>
+            <span class="author-block">Yong-Lu Li<sup>2,3</sup>,</span>
+            <span class="author-block">Long Chen<sup>4</sup>,</span>
+            <span class="author-block">Guang Chen<sup>1,2,&dagger;</sup>,</span>
+            <span class="author-block">Jinghui Lu<sup>4,&dagger;</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors" style="margin-top: 15px;">
             <span class="author-block"><sup>1</sup>Tongji University,</span>
             <span class="author-block"><sup>2</sup>Shanghai Innovation Institute,</span>
-            <span class="author-block"><sup>3</sup>Xi'an Jiaotong University,</span>
-            <span class="author-block"><sup>4</sup>Shanghai Jiao Tong University</span>
+            <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>4</sup>Xiaomi EV</span>
           </div>
 
           <div class="is-size-7 publication-authors" style="margin-top: 10px;">
-            <span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+            <span class="author-block"><sup>&dagger;</sup>Corresponding Authors</span>
           </div>
 
           <div class="column has-text-centered">
@@ -158,190 +158,115 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>In robot imitation learning, influence functions provide a principled approach to quantify each demonstration's effect on robot task outcomes, yet scaling them to billion-parameter Vision-Language-Action (VLA) models is limited by computational and multitask bottlenecks. To this end, we propose ATHENA, an influence function framework tailored for multitask VLA data curation at billion-parameter scale. Concretely, it leverages the Kronecker structure of linear-layer gradients to reduce projection cost, and approximates dense Hessian inversion with a rank-$r$ Random Truncated Approximation, achieving about a 313.4x speedup in influence computation. Furthermore, ATHENA formulates global and local interactive influence to balance data curation across 50 jointly trained tasks. Extensive evaluations on RoboTwin 2.0 and real-robot deployment, covering 9.34 and 6.90 hours of demonstrations, respectively, show that ATHENA matches or exceeds full-data joint fine-tuning using only 50% of demonstrations in simulation and 66.7% of data across six real-robot tasks. Overall, ATHENA demonstrates its effectiveness for data curation in billion-parameter multitask VLA fine-tuning.
-        </div>
+            <p>Occluded tasks remain a bottleneck in robot manipulation. Existing solutions either deploy additional physical cameras requiring training-inference camera parity, or rely on explicit 3D reconstruction with high computational cost. Moreover, both approaches rely on standard agent-view and wrist-view observations, while failing to capture occlusion information and future scene evolution. To this end, we propose <strong>UniviewVLA</strong>, a <strong>uni</strong>fied multi<strong>view</strong> <strong>V</strong>ision-<strong>L</strong>anguage-<strong>A</strong>ction model with world modeling, which infers multiview scene evolution for action prediction from only standard two-camera observations. We demonstrate that by leveraging generated multiview future views from the world model, UniviewVLA reveals occluded cues and models future scene evolution, improving action prediction and removing the need for extra hardware or explicit reconstruction. Besides, to accelerate inference while preserving prediction accuracy, UniviewVLA develops Motion-Informative Token Compression, which compresses each generated view from 625 to 16 tokens and reduces per-view latency from 6&ndash;7s to 0.2&ndash;0.3s. UniviewVLA also proposes training-free Action-Entropy View Selection, which dynamically identifies the most action-informative view at different inference stages. Extensive experiments show that UniviewVLA achieves 95.8% on LIBERO and 4.60 on CALVIN ABCD&rarr;D, both standard occlusion-free benchmarks. On customized occlusion-focused tasks, it improves success rate from 40.0% to 73.3%, and average real-robot success rate by 33.4 points, demonstrating stronger occlusion-focused performance without sacrificing standard occlusion-free benchmarks.</p>
+          </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    
-    <!-- Paper video. -->
+    <!-- Occlusion-focused tasks. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/ATHENA-video.mp4" type="video/mp4">
-        </video>
+        <h2 class="title is-3">Occlusion-Focused Simulation Tasks</h2>
+        <p class="content has-text-justified">
+          We evaluate UniviewVLA on six customized occlusion-focused simulation tasks with diverse occlusion scenarios. The table below lists the language instructions for each task, and the videos show UniviewVLA rollouts.
+        </p>
+
+        <div class="table-container" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+          <table class="table is-bordered is-striped is-fullwidth occlusion-tasks-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Language Instruction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Scene1 Bowl</td>
+                <td>open the bottom drawer of the cabinet and put the bowl in it</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Scene2 Bowl</td>
+                <td>put the black bowl on the left plate</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Scene4 Wine</td>
+                <td>pick up the wine bottle at the back and put it on the wine rack</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Scene4 Drawer</td>
+                <td>put the black bowl at the left in the bottom drawer of the cabinet and close it</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Scene7 Mug</td>
+                <td>put the yellow and white mug on the plate</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Scene8 Moka</td>
+                <td>turn off the stove and put the moka pot on top of the cabinet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="columns is-multiline is-centered occlusion-video-grid">
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 1: Scene1 Bowl</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 2: Scene2 Bowl</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 3: Scene4 Wine</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 4: Scene4 Drawer</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 5: Scene7 Mug</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <h4 class="title is-5">Task 6: Scene8 Moka</h4>
+            <video autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/occlusion-focused/Task6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
     </div>
-    <!--/ Paper video. -->
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Real Robot ALOHA Demonstration</h2>
-    <p class="content has-text-centered">
-      We evaluate ATHENA on six real-robot ALOHA tasks spanning three different difficulty levels. The videos below compare the performance of ATHENA, Oracle, and the Full-Data baseline. The percentages in parentheses indicate the proportion of demonstration data retained for fine-tuning. Notably, both ATHENA and Oracle use exactly 66.7% of the original data.
-    </p>
-
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 1: Pick Fruits (simple)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (66.7%, Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/a1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/a2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/a3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 2: Wipe Board (simple)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/b1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/b2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/b3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 3: Stack Bowls (medium)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (66.7%, Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/c1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/c3.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/c2.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 4: Box Return (medium)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (66.7%, Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/d1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/d2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/d3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 5: Seal Stamping (challenging)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (66.7%, Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/e1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/e2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/e3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
-
-    <h3 class="title is-4 has-text-centered" style="margin-top: 2rem;">Task 6: Shelf Retrieval (challenging)</h3>
-    <div class="columns is-centered">
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">ATHENA (66.7%, Ours)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/f1.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Oracle (66.7%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/f2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="column is-one-third has-text-centered">
-        <h4 class="title is-5">Full-Data (100%)</h4>
-        <video autoplay controls muted loop playsinline width="100%">
-          <source src="./static/videos/real_robot/f3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div><hr>
+    <!--/ Occlusion-focused tasks. -->
 
   </div>
 </section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{athena2026,
-  title={ATHENA: Accelerated Multi-Task Heterogeneous Influence Functions for Robot Data Curation},
-  author={Xu, Tao and Wang, Jiaxin and Zhang, Runhao and Guan, Jiayi and Zeng, Xianchao and Song, Weixi and Zhou, Xinyu and Chen, ZheTao and Chen, Guang and Li, Yong-Lu},
+    <pre><code>@inproceedings{univiewvla2026,
+  title={UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling},
+  author={Xu, Tao and Zhang, Runhao and Huang, Zhijian and Guan, Jiayi and Wang, Jiaxin and Ding, Yifan and Li, Yong-Lu and Chen, Long and Chen, Guang and Lu, Jinghui},
   booktitle={Conference on Robot Learning (CoRL)},
   year={2026}
 }</code></pre>

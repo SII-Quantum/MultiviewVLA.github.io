@@ -28,18 +28,20 @@ body {
   font-size: 0.95rem;
   line-height: 1.65;
   color: #363636;
-  text-align: left;
+  text-align: left !important;
+  display: block;
+  width: 100%;
 }
 
 .teaser .overview-caption .caption-title {
   font-size: 1.05rem;
   margin-bottom: 0.85rem;
-  text-align: left;
+  text-align: left !important;
 }
 
 .teaser .overview-caption p {
   margin-bottom: 0.9rem;
-  text-align: left;
+  text-align: left !important;
 }
 
 .teaser .overview-caption p:last-child {

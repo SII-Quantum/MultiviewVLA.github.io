@@ -139,17 +139,16 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <p><img class="img-fluid" alt="UniviewVLA pipeline overview" src="./static/images/overview.png?v=3"></p>
-      <h2 class="subtitle has-text-centered figure-caption">
-        <strong>UniviewVLA pipeline.</strong>
-        UniviewVLA models language instructions, multiview observations, and actions with discrete tokens that can be autoregressively predicted by a unified Transformer model, using two training stages and dynamic inference.
-        <strong>(1) Multiview world model post-training.</strong>
-        UniviewVLA takes language instructions, standard agent-view, and wrist-view inputs, and autoregressively generates future multiview images that incorporate multiview and world evolution information.
-        <strong>(2) Action fine-tuning.</strong>
-        UniviewVLA first predicts compact motion-informative tokens to avoid the high latency of full auxiliary-view tokens, and then predicts FAST action tokens.
-        <strong>(3) Dynamic inference.</strong>
-        During inference, transparent cameras denote generated auxiliary views, and the green camera denotes the selected auxiliary view. UniviewVLA periodically selects the best auxiliary view for action prediction across different inference stages instead of using a fixed viewpoint.
-      </h2>
+      <figure class="overview-figure">
+        <img class="img-fluid" alt="UniviewVLA pipeline overview" src="./static/images/overview.png?v=4">
+        <figcaption class="overview-caption">
+          <p class="caption-title"><strong>UniviewVLA pipeline.</strong></p>
+          <p>UniviewVLA models language instructions, multiview observations, and actions with discrete tokens that can be autoregressively predicted by a unified Transformer model, using two training stages and dynamic inference.</p>
+          <p><strong>(1) Multiview world model post-training.</strong> UniviewVLA takes language instructions, standard agent-view, and wrist-view inputs, and autoregressively generates future multiview images that incorporate multiview and world evolution information.</p>
+          <p><strong>(2) Action fine-tuning.</strong> UniviewVLA first predicts compact motion-informative tokens to avoid the high latency of full auxiliary-view tokens, and then predicts FAST action tokens.</p>
+          <p><strong>(3) Dynamic inference.</strong> During inference, transparent cameras denote generated auxiliary views, and the green camera denotes the selected auxiliary view. UniviewVLA periodically selects the best auxiliary view for action prediction across different inference stages instead of using a fixed viewpoint.</p>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -289,7 +288,7 @@
         </figure>
 
         <figure class="appendix-figure">
-          <img class="img-fluid" alt="CALVIN multiview camera setup" src="./static/images/calvin_multiview.png">
+          <img class="img-fluid" alt="CALVIN multiview camera setup" src="./static/images/calvin_multiview.png?v=2">
           <figcaption class="figure-caption has-text-centered">
             <strong>CALVIN multiview.</strong>
           </figcaption>

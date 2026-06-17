@@ -23,17 +23,35 @@ body {
   padding-bottom: 3rem;
 }
 
-.teaser .figure-caption {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #363636;
+.teaser .overview-caption {
   max-width: 960px;
-  margin: 1rem auto 0;
+  margin: 1.25rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #363636;
+}
+
+.teaser .overview-caption .caption-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+.teaser .overview-caption p {
+  margin-bottom: 0.9rem;
   text-align: justify;
 }
 
-.teaser .figure-caption strong {
+.teaser .overview-caption p:last-child {
+  margin-bottom: 0;
+}
+
+.teaser .overview-caption strong {
   color: #111;
+}
+
+.teaser .overview-figure {
+  margin: 0;
 }
 
 .teaser {
@@ -42,8 +60,9 @@ body {
 
 .publication-title {
 }
-  max-height: parent;
 
+.publication-banner {
+  max-height: parent;
 }
 
 .publication-banner video {

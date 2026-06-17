@@ -171,46 +171,13 @@
     </div>
     <!--/ Abstract. -->
 
-    <!-- Standard occlusion-free benchmark tasks. -->
+    <!-- Customized occlusion-focused tasks. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Standard Occlusion-Free Benchmark Tasks</h2>
-        <p class="content has-text-justified">
-          For standard simulation benchmarks, we obtain multiview supervision by replaying recorded demonstrations with additional workspace cameras in the simulator. LIBERO uses 60&deg;, 120&deg;, 240&deg;, 300&deg;, and overhead views, as shown below. Since the rear tabletop side in CALVIN is mostly redundant or weakly informative, we use more widely spaced views at 30&deg;, 216&deg;, 288&deg;, and overhead.
-        </p>
-
-        <figure class="appendix-figure">
-          <img class="img-fluid" alt="LIBERO multiview camera setup" src="./static/images/libero_multiview.png">
-          <figcaption class="figure-caption has-text-centered">
-            <strong>LIBERO multiview.</strong>
-          </figcaption>
-        </figure>
-
-        <figure class="appendix-figure">
-          <img class="img-fluid" alt="CALVIN multiview camera setup" src="./static/images/calvin_multiview.png">
-          <figcaption class="figure-caption has-text-centered">
-            <strong>CALVIN multiview.</strong>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <!--/ Standard occlusion-free benchmark tasks. -->
-
-    <!-- Occlusion-focused tasks. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Occlusion-Focused Simulation Tasks</h2>
+        <h2 class="title is-3">Customized Occlusion-Focused Simulation Tasks</h2>
         <p class="content has-text-justified">
           To further evaluate the importance of multiview information, we construct six customized occlusion-focused tasks that hide action-critical cues from the standard viewpoints. Specifically, we follow the LIBERO BDDL format to design occluded manipulation scenes and collect multiview demonstrations with a hardware-in-the-loop teleoperation setup based on a 3D SpaceMouse. Each task contains 60 demonstrations. The table below lists the corresponding language instructions, and the videos show UniviewVLA rollouts.
         </p>
-
-        <figure class="appendix-figure">
-          <img class="img-fluid" alt="Six customized occlusion-focused tasks" src="./static/images/occlusion_tasks.png">
-          <figcaption class="figure-caption has-text-centered">
-            <strong>Six customized occlusion-focused tasks.</strong>
-            Each task hides action-critical state cues from the default agent-view camera while preserving the same two deployed physical observations.
-          </figcaption>
-        </figure>
 
         <div class="table-container" style="margin-top: 1.5rem; margin-bottom: 2rem;">
           <table class="table is-bordered is-striped is-fullwidth occlusion-tasks-table">
@@ -294,9 +261,42 @@
             </video>
           </div>
         </div>
+
+        <figure class="appendix-figure">
+          <img class="img-fluid" alt="Six customized occlusion-focused tasks" src="./static/images/occlusion_tasks.png">
+          <figcaption class="figure-caption has-text-centered">
+            <strong>Six customized occlusion-focused tasks.</strong>
+            Each task hides action-critical state cues from the default agent-view camera while preserving the same two deployed physical observations.
+          </figcaption>
+        </figure>
       </div>
     </div>
-    <!--/ Occlusion-focused tasks. -->
+    <!--/ Customized occlusion-focused tasks. -->
+
+    <!-- Standard occlusion-free benchmark tasks. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Standard Occlusion-Free Benchmark Tasks</h2>
+        <p class="content has-text-justified">
+          For standard simulation benchmarks, we obtain multiview supervision by replaying recorded demonstrations with additional workspace cameras in the simulator. LIBERO uses 60&deg;, 120&deg;, 240&deg;, 300&deg;, and overhead views, as shown below. Since the rear tabletop side in CALVIN is mostly redundant or weakly informative, we use more widely spaced views at 30&deg;, 216&deg;, 288&deg;, and overhead.
+        </p>
+
+        <figure class="appendix-figure">
+          <img class="img-fluid" alt="LIBERO multiview camera setup" src="./static/images/libero_multiview.png">
+          <figcaption class="figure-caption has-text-centered">
+            <strong>LIBERO multiview.</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="appendix-figure">
+          <img class="img-fluid" alt="CALVIN multiview camera setup" src="./static/images/calvin_multiview.png">
+          <figcaption class="figure-caption has-text-centered">
+            <strong>CALVIN multiview.</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!--/ Standard occlusion-free benchmark tasks. -->
 
   </div>
 </section>

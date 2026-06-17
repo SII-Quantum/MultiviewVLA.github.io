@@ -201,8 +201,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Occlusion-Focused Simulation Tasks</h2>
         <p class="content has-text-justified">
-          We evaluate UniviewVLA on six customized occlusion-focused simulation tasks with diverse occlusion scenarios. The table below lists the language instructions for each task, and the videos show UniviewVLA rollouts.
+          To further evaluate the importance of multiview information, we construct six customized occlusion-focused tasks that hide action-critical cues from the standard viewpoints. Specifically, we follow the LIBERO BDDL format to design occluded manipulation scenes and collect multiview demonstrations with a hardware-in-the-loop teleoperation setup based on a 3D SpaceMouse. Each task contains 60 demonstrations. The table below lists the corresponding language instructions, and the videos show UniviewVLA rollouts.
         </p>
+
+        <figure class="appendix-figure">
+          <img class="img-fluid" alt="Six customized occlusion-focused tasks" src="./static/images/occlusion_tasks.png">
+          <figcaption class="figure-caption has-text-centered">
+            <strong>Six customized occlusion-focused tasks.</strong>
+            Each task hides action-critical state cues from the default agent-view camera while preserving the same two deployed physical observations.
+          </figcaption>
+        </figure>
 
         <div class="table-container" style="margin-top: 1.5rem; margin-bottom: 2rem;">
           <table class="table is-bordered is-striped is-fullwidth occlusion-tasks-table">
@@ -290,18 +298,6 @@
     </div>
     <!--/ Occlusion-focused tasks. -->
 
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{univiewvla2026,
-  title={UniviewVLA: A Unified Multiview Vision-Language-Action Model with World Modeling},
-  author={Xu, Tao and Zhang, Runhao and Huang, Zhijian and Guan, Jiayi and Wang, Jiaxin and Ding, Yifan and Li, Yong-Lu and Chen, Long and Chen, Guang and Lu, Jinghui},
-  booktitle={Conference on Robot Learning (CoRL)},
-  year={2026}
-}</code></pre>
   </div>
 </section>
 
